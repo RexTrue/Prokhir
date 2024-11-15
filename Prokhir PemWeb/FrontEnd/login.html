@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+
+<body>
+    <form action="../BackEnd/login.php" method="POST">
+        <div class="popup-container" id="loginPopup">
+            <button class="close" onclick="closePopup()">×</button>
+            <div class="logo">
+                <!-- <img src="logo.png" alt="X Logo"> -->
+            </div>
+            <h1>Sign in to CeritaKita</h1>
+
+            <button class="google-signin">
+                <img src="google-icon.png" alt="Google Icon"> Sign in with Google
+            </button>
+
+            <button class="apple-signin">
+                <img src="apple-icon.png" alt="Apple Icon"> Sign in with Apple
+            </button>
+
+            <div class="divider">
+                <span>or</span>
+            </div>
+
+            <input type="text" placeholder="Email or Username" name="username">
+            <input type="password" placeholder="Password" name="password">
+
+            <button class="next-btn" style="margin-top:30px;" type="submit">Next</button>
+            <a href="#" class="forgot-password">Forgot password?</a>
+
+            <div class="signup">
+                <span>Don't have an account?</span> <a href="../FrontEnd/register.html">Sign up</a>
+            </div>
+        </div>
+
+        <!-- <div class="popup-container" id="phoneEmailPopup" style="display: none;">
+            <button class="close" onclick="closePopup()">×</button>
+            <h1>Enter your Email address</h1>
+            <p>Email lu coy</p>
+
+            <input type="text" placeholder="Phone or email" name="email">
+
+            <button class="next-btn" onclick="verifyUser()">Next</button>
+        </div> -->
+    </form>
+
+    <script>
+        // Function to close the popup and redirect to index.php
+        function closePopup() {
+            window.location.href = '../index.php';
+        }
+
+        // Function to switch from login screen to phone/email verification screen
+        <!-- function goToPhoneEmailScreen() {
+            document.getElementById('loginPopup').style.display = 'none';  // Hide login popup
+            document.getElementById('phoneEmailPopup').style.display = 'block';  // Show phone/email popup
+        } -->
+
+        // Function to handle the next button for the phone/email verification screen
+        function verifyUser() {
+            const phoneEmailValue = document.getElementById('phoneEmailInput').value;
+            alert("Verifying: " + phoneEmailValue);
+            // You can add more logic here for the actual verification
+        }
+    </script>
+
+</body>
+
+</html>
